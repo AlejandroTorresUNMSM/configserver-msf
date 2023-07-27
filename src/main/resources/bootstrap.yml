@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: configserver-msf
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AlejandroTorresUNMSM/bootcamp-config
+          search-paths: /
+          default-label: "main"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: false
+    hostname: 127.0.0.1
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 90
